@@ -1000,32 +1000,29 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   {
-  "obsidian-nvim/obsidian.nvim",
-  version = "*", -- use latest release, remove to use latest commit
-  ---@module 'obsidian'
-  ---@type obsidian.config
-  opts = {
-    legacy_commands = false, -- this will be removed in 4.0.0
-    workspaces = {
-      {
-        name = "personal",
-        path = "~/vaults/personal",
+    'obsidian-nvim/obsidian.nvim',
+    version = '*', -- use latest release, remove to use latest commit
+    lazy = true,
+    ---@module 'obsidian'
+    ---@type obsidian.config
+    opts = {
+      legacy_commands = false, -- this will be removed in 4.0.0
+      workspaces = {
+        {
+          name = 'personal',
+          path = '~/Documents/vaults/personal',
+        },
+        {
+          name = 'work',
+          path = '~/Documents/vaults/work',
+        },
       },
-      {
-        name = "work",
-        path = "~/vaults/work",
-      },
-      {
-          name = "C Programming Language",
-          path = "~/Dev/C-Programming-Language/C Programming Language Notes/",
-      },
-    },
 
-    ui = {
-      enable = true,
+      ui = {
+        enable = true,
+      },
     },
   },
-}
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
